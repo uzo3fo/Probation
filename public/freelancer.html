@@ -31,39 +31,24 @@
             </li>
         </div>
       </nav>
-    <!--content-->
-   <main id="signUp">
-       <form >
-          <h4>Personal Profile</h4>
-           <label for="name"><sup>*</sup>Name:</label><br>
-           <input type="text" id="name" name="name" placeholder="Enter your name" required>
-           <br>
-           <label for="Email"><sup>*</sup>Email:</label><br>
-           <input type="email" id="email" name="email" placeholder="Enter your Email" required>
-           <br>
-           <label for="country"><sup>*</sup>Country:</label><br>
-           <input type="text" id="country" name="country" placeholder="Country" required>
-           <br>
-           <label for="skill"><sup>*</sup>Skill:</label><br>
-           <input type="text" id="skill" name="skill" placeholder="Web developer" required>
-           <br>
-           <label for="price"><sup>*</sup>Price:</label><br>
-           <input type="text" id="price" name="price" placeholder="$100/hr" required>
-           <br>
-           <label for="username"><sup>*</sup>Username:</label><br>
-           <input type="text" id="username" name="username" placeholder="abcd" maxlength="8" required>
-           <br>
-           <label for="password"><sup>*</sup>Password:</label><br>
-           <input type="password" id="password" name="password" placeholder="" minlength="8" maxlength="20" required>
-           <br>
-           <small>Must contain numbers and alphabet. Min of 8, Max of 20 characters</small>
-           <br>
-           <label for="description"><sup>*</sup>Description</label><br>
-           <textarea name="" id="description" cols="30" rows="3" name="description" placeholder="Describe your skills here..."></textarea>
-           <br>
-           <button type="submit" id="signup-button">Submit</button>
-       </form>
-   </main>
+    <!--table containing list of freelancers-->
+<table class="table border='2' table-dark table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Country</th>
+        <th>Skill</th>
+        <th>Price</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody id="freelancer-list">
+
+    </tbody>
+
+  </table>
 
       
 </body>

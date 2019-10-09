@@ -1,16 +1,24 @@
 {
   "freelancer": [
     {
-      "img": "../img/dp.jpg",
       "name": "fred",
       "email": "fred@gmail.com",
       "country": "Finland",
       "skill": "Web developer",
       "description": "I will build a robust application for, with the required functionality.",
-      "price":"$50/hr",
-      "username":"fredo",
-      "password":"asd23fv43",
+      "price": "$50/hr",
+      "username": "fredo",
+      "password": "asd23fv43",
       "id": 1
+    },
+    {
+      "name": "chibuzor",
+      "email": "csc@gmail.com",
+      "country": "Rwanda",
+      "skill": "Graphics designer",
+      "price": "$20/hr",
+      "description": "wljjef'jroj",
+      "id": 2
     }
   ]
 }
