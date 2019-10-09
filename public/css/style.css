@@ -1,0 +1,65 @@
+body {
+    padding-top: 70px;
+    margin-top:70px;
+    background: url(../img/per-loov-_1Z4zsEXUSk-unsplash.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: Raleway;
+}
+.navbar{
+    background-color: rgb(7,4,62);
+}
+.navbar-brand{
+    color:#d9534f;
+}
+.nav-link{
+    color:#d9534f;
+}
+#logo{
+    font-size: 700;
+    font-weight: 700;
+    font-family: cursive;
+}
+
+h1{
+    color: white;
+}
+
+h3{
+    color: white;
+}
+
+#content{
+    text-align: center;
+    padding-top: 25%;
+        
+}
+
+html{
+    height: 100%;
+}
+hr{
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+footer{
+    background:rgb(7,4,62) ;
+    color:rgb(246,246,254) ;
+    padding:20px;
+    margin-top: 30px;
+}
+footer li{
+    list-style: none;
+}
+footer div:nth-child(4) i{
+    border: 1px solid white;
+    border-radius: 50px;
+    padding: 0.1rem;
+}
+/*--primary: rgb(7,4,62);
+    --light: rgb(88,89,137);
+    --accent: rgb(48,101,248);
+    --neutral:rgb(246,246,254);*/
+
+
