@@ -6,7 +6,8 @@ var $skill = $('#skill');
 var $price = $('#price');
 var $description = $('#description');
 
-
+let path = $(location).attr('pathname');
+    console.log(path);
     //get request
     $.ajax({
         type:'GET',
@@ -27,6 +28,8 @@ var $description = $('#description');
         }
     }
 })
+
+//post request
 $('#signup-button').on('click', function(){
     var freelancer ={
         name:$name.val(),
@@ -56,6 +59,27 @@ $('#signup-button').on('click', function(){
         }
     })
 })
+//view individual profile
+if(path === "/view.html"){
+    console.log(path)
+        const url = window.location.href;
+        const urlArray = url.split("id=");
+        let id = urlArray[1];
+        id = parseInt(id);
+
+       $.get(`/freelancer/${id}`, function(data){
+           console.log(data);
+
+           $("#name").html(data.name);
+           $("#email").html(data.email);
+           $("#country").html(data.country);
+           $("#price").html(data.price);
+           $("#description").html(data.description);
+           $("#update-div").html('<a href="update.html?id='+data.id+'" class="btn btn-warning" id="update-button">UPDATE</a>');
+           
+    })
+
+    } 
 
 
 })
