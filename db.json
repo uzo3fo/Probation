@@ -49,18 +49,6 @@
       "id": 5
     },
     {
-      "name": "Adamu Ali",
-      "email": "adamu@gmail.com",
-      "password": "Admin@12",
-      "skill": "Tester",
-      "phone": "08101234567",
-      "price": "6000",
-      "gender": "Male",
-      "description": "I test your application, i can handle critical test and ensure your application meets the ultimate test.",
-      "image": "face7.jpg",
-      "id": 7
-    },
-    {
       "name": "Smith Kingsley",
       "email": "smith@gmail.com",
       "password": "Admin@12",

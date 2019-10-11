@@ -82,16 +82,6 @@ $(document).ready(function () {
         $("#logout").show();
         $("#profile").show();
     }
-    
-
-    // Animating Navigation
-    $(window).on('scroll', () => {
-        if ($(window).scrollTop()) {
-            $("nav").addClass("black");
-        } else {
-            $("nav").removeClass("black");
-        }
-    });
 
     // Get all skills from the database
     if (path === "/index.html" || path === "/viewAll.html" || url === '/about.html') {  
@@ -111,7 +101,7 @@ $(document).ready(function () {
 
 
     // Load freelancers from the database on the homepage
-    axios.get("http://localhost:3000/Freelancers?_start=0&_end=6")
+   /* axios.get("http://localhost:3000/Freelancers?_start=0&_end=6")
         .then(response => {
             const users = response.data;
             users.forEach(user => {
@@ -136,7 +126,7 @@ $(document).ready(function () {
                 );
             });
         })
-        .catch(e => alert("Error loading data due to network issues"));  
+        .catch(e => alert("Error loading data due to network issues"));  */
         
     if (path === '/viewAll.html') {
         axios.get("http://localhost:3000/Freelancers")
@@ -302,7 +292,9 @@ $(document).ready(function () {
     /*  Profile handling goes here..  **/
     // Only do this in profile.html page
     if (path === '/profile.html') {
-
+        $("#contactme").on('click', (e) => {
+            e.preventDefault();
+            $('#profile-info').append('you have been contacted check your email') })
         // get the user info from the database and preload the fields
         axios.get(`http://localhost:3000/Freelancers/${userId}`)
             .then(response => {
