@@ -1,0 +1,114 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>OSMO-6 | online freelancers market</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./public/css/bootstrap.min.css">
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="./public/css/all.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet"> 
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="./public/css/register.css">
+    <style>
+        h4, h5, input, textarea, a {
+            font-family: Quicksand;
+        }
+    </style>
+
+  </head>
+  <body>
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg navbar-danger fixed-top">
+        <a class="navbar-brand" href="index.html" id="logo">OSMO-6</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="./viewAll.html">Get A Freelancer <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./register.html">Sign-Up</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="./login.html">Sign-In</a>
+            </li>
+        </div>
+      </nav>
+    <section class="sect1">
+        <div class="container register">
+            <div class="row">
+                <div class="col-md-6 left-side">
+                    <h5>MAKE MONEY BY GAINING ASSESS TO OUR OVER 1MILLION CUSTOMERS</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, aliquam! Quas ut repudiandae esse id.</p>
+                </div>
+                <div class="col-md-6 mx-auto mt-4">
+                    <form method="post" id="reg-form" class="card bg-white p-4">
+                        <h4 class="text-center text-uppercase">Register as a FreeLancer</h4>
+                        <div class="alert alert-danger d-none" id="registerGeneralError"><small><strong>All fields are required</strong></small></div>
+                        <hr>
+
+                        <div class="form-group">
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Enter Full Name">
+                            <small id="nameError" class="text-danger"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="email" id="email" class="form-control" placeholder="Enter email address">
+                            <small id="emailError" class="text-danger"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Enter password">
+                            <small id="passwordError" class="text-danger"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" name="confirm" id="confirm" class="form-control" placeholder="Confirm password">
+                            <small id="confirmError" class="text-danger"></small>
+                        </div>
+
+                        <!-- <div class="form-group">
+                            <input type="number" name="phone" id="phone" class="form-control" placeholder="Enter phone number">
+                            <small id="phoneError" class="text-danger"></small>
+                        </div> -->
+
+                        <div class="form-group">
+                            <input type="text" name="skill" id="skill" class="form-control" placeholder="Enter skill (e.g => Web Developer)">
+                            <small id="skillError" class="text-danger"></small>
+                        </div>
+
+                        <!-- Register In button -->
+                        <div class="form-group">
+                          <button id="register" class="btn btn-outline-primary btn-block">Register <i class="fa fa-user" aria-hidden="true"></i> </button>
+                        </div>
+
+                        <a href="./login.html" id="log-link">Already have an account? Login</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./public/js/jquery-3.2.1.min.js"></script>
+    <script src="./public/js/jquerysession.js"></script>
+    <script src="./public/js/popper.min.js"></script>
+    <script src="./public/js/all.js"></script>
+    <script src="./public/js/bootstrap.min.js"></script>
+    <!-- Axios -->
+    <script src="./public/js/axios.js"></script>
+
+    <!-- Custom Javascript -->
+    <script src="./index.js"></script>
+  </body>
+</html>

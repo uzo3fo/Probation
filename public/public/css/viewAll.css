@@ -1,0 +1,20 @@
+body{
+    background: none;
+}
+.navbar{
+    background-color: rgb(7,4,62);
+}
+.navbar-brand{
+    color:#d9534f;
+}
+.nav-link{
+    color:#d9534f;
+}
+#logo{
+    font-size: 700;
+    font-weight: 700;
+    font-family: cursive;
+}
+#index-top-freelancers{
+    padding-top:70px;
+}

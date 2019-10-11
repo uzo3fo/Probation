@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="./public/css/owl.carousel.css">
     <link rel="stylesheet" href="./public/css/animate.min.css">
     <!-- Custom Css -->
-    <link rel="stylesheet" href="./public/css/custom.css">
+    <link rel="stylesheet" href="./public/css/viewAll.css">
     <!-- JQuery and Session -->
     <script src="./public/js/jquery-3.2.1.min.js"></script>
     <script src="./public/js/jquerysession.js"></script>
@@ -42,60 +42,20 @@
           </li>
       </div>
     </nav>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-               <div id="content">
-                <h3> JOIN THE ELITE FREELANCERS</h3>
-                <hr>
-                <a href="./register.html"><button class="btn btn-danger btn-lg m-2" id="get-started" >Get Started!</button></a>
-                <a href="./viewAll.html"><button class="btn btn-danger btn-lg" id="get-freelancer" > Get A Freelancer</button></a>
-               </div>
-            </div>
-        </div>
-    </div>
-   <!-- <div class="container mt-3 mb-5">
-        <h3 class="text-center display-4" id="index-top-freelancers">Top FreeLancers</h3>
-        <div class="row top-freelancers mt-2">
+    
+    <div class="container mt-3 mb-5">
+        <h3 class="text-center display-4" id="index-top-freelancers"></h3>
+        <div class="row all-freelancers mt-2">
           <!-- jQuery Populates Data Here... -->
-       <!-- </div>
-        <div class="row">
+        </div>
+       <!-- <div class="row">
           <div class="col-md-4 mx-auto">
-            <a href="./viewAll.html" class="btn btn-outline-success btn-sm btn-block">View All <i class="fas fa-chevron-down"></i></a>
+            <a href="./index.html" class="btn btn-outline-primary btn-sm btn-block">View Less <i class="fas fa-chevron-circle-up"></i></a>
           </div>
         </div>  
     </div>-->
 
-    <!--footer-->
-    <footer>
-      <div class="row">
-          <div class="col-md-3">
-              <p><img src="./images/icon-phone.svg" alt=""> Phone: +234-803-123-4567 </p>
-              <p><img src="./images/icon-email.svg" alt=""> example@osmo-6.com</p>
-          </div>
-          <div class="col-md-3">
-              <ul>
-                  <li>About Us</li>
-                  <li>Jobs</li>
-                  <li>Press</li>
-                  <li>Blog</li>
-              </ul>
-              </div>
-              <div class="col-md-3">
-                  <ul>
-                      <li>Contact Us</li>
-                      <li>Terms</li>
-                      <li>Privacy</li>
-                  </ul>
-              </div>
-              <div class="col-md-3">
-                  <i class="fab fa-facebook"></i>
-                  <i class="fab fa-twitter"></i>
-                  <i class="fab fa-instagram"></i>
-              </div>
-      </div>    
-  </footer>
-
+    
 
 
 
@@ -114,12 +74,11 @@
 
     <!-- Custom Javascript -->
     <script src="./index.js"></script>
-
     <script>
       $("#owl-example").owlCarousel({
         items: 1,
         animateOut: 'fadeOut',
-        slideSpeed: 5,
+        slideSpeed: 10,
         autoplay: true,
         loop: true
       });

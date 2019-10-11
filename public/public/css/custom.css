@@ -1,0 +1,307 @@
+/*nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    padding: 10px 100px;
+    box-sizing: border-box;
+    transition: 0.3s;
+    font-family: Quicksand;
+}
+
+nav.black {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+nav .logo {
+    float: left;
+    height: 30px;
+    padding: 10px 20px;
+    font-size: 24px;
+    transition: .3s;
+}
+
+nav.black .logo {
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    float: right;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    line-height: 60px;
+    color: #151515;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    transition: .3s;
+    font-size: 16px;
+}
+
+nav.black ul li a {
+    color: #fff;
+}
+
+nav ul li a:focus {
+    outline: none;
+}
+
+nav ul li a.active {
+    background: #E2472F;
+    color: #fff;
+    border-radius: 6px;
+}
+
+/* Styling on banner */
+
+
+/* Utilities */
+
+/*.signup {
+    margin-right: 10px;
+    background: #388bda !important;
+}
+
+.sect1 {
+    margin-top: 80px;
+    width: 100%;
+    height: 120vh;
+    background-image: url("../img/apple.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+#left-section {
+    position: absolute;
+    top: 145px;
+    left: 125px;
+}
+
+.display-5 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: 1.1;
+    font-family: Quicksand;
+    color: #c7d5ee;
+    margin-bottom: 30px;
+}
+
+#left-section input[type="text"] {
+    width: 500px;
+    padding: 20px;
+    color: white;
+    background: transparent;
+    margin-right: -84px;
+}
+
+#left-section input[type="text"]:focus {
+    box-shadow: none;
+}
+
+#left-section button {
+    padding: 8px;
+    color: white;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    border-radius: 0 5px 5px 0;
+    border-color: white;
+}
+
+#left-section p#popular {
+    margin-left: 190px;
+    margin-bottom: 0px;
+    margin-top: 7px;
+    font-family: Quicksand;
+}
+
+#left-section ul.nav {
+    width: 500px;
+    border-radius: 5px;
+    background: transparent !important;
+}
+
+#left-section ul.nav li {
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+#left-section ul.nav li a {
+    font-size: 11px;
+    color: #fff;
+}
+
+#right-section {
+    position: absolute;
+    right: -32px;
+    top: 48px;
+}
+*//*--primary: rgb(7,4,62);
+    --light: rgb(88,89,137);
+    --accent: rgb(48,101,248);
+    --neutral:rgb(246,246,254);*/
+body {
+    padding-top: 70px;
+    margin-top:70px;
+    background: url(../img/per-loov-_1Z4zsEXUSk-unsplash.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: Raleway;
+}
+.navbar{
+    background-color: rgb(7,4,62);
+}
+.navbar-brand{
+    color:#d9534f;
+}
+.nav-link{
+    color:#d9534f;
+}
+#logo{
+    font-size: 700;
+    font-weight: 700;
+    font-family: cursive;
+}
+
+h1{
+    color: white;
+}
+
+h3{
+    color: white;
+}
+
+#content{
+    text-align: center;
+    padding-top: 25%;
+        
+}
+
+html{
+    height: 100%;
+}
+hr{
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.top-freelancers .card {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+#logout {
+    cursor: pointer;
+}
+
+iframe {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+#about-page {
+    font-family: Quicksand;
+}
+
+#about-page .card {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
+/* Footer Section */
+
+footer{
+    background:rgb(7,4,62) ;
+    color:rgb(246,246,254) ;
+    padding:20px;
+    margin-top: 30px;
+}
+footer li{
+    list-style: none;
+}
+footer div:nth-child(4) i{
+    border: 1px solid white;
+    border-radius: 50px;
+    padding: 0.1rem;
+}
+
+/* Media Queries Handline */
+@media only screen and (max-width: 767px) {
+
+    nav .logo {
+        height: 30px;
+        padding: 10px 20px;
+        font-size: 19px;
+        transition: .3s;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    nav ul {
+        list-style: none;
+        float: right;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        white-space: nowrap;
+        padding: 0;
+    }
+
+    nav ul li a {
+        line-height: 89px;
+        color: #151515;
+        padding: 10px 4px;
+        text-transform: uppercase;
+        text-decoration: none !important;
+        transition: .3s;
+        font-size: 12px;
+    }
+
+    .sect1 {
+        margin-top: 80px;
+        width: 100%;
+        height: 20vh;
+        background-image: url("../img/apple.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+
+    #index-top-freelancers {
+        font-size: 2.3rem;
+    }
+
+    #right-section, #left-section, iframe, #reg-link, #log-link {
+        display: none;
+    }
+
+    #reg-form {
+        z-index: 1;
+    }
+
+    /* Footer */
+    .footer {
+        font-size: 14px;
+    }
+    .footer .footer-left,
+    .footer .footer-center,
+    .footer .footer-right {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .footer .footer-center i {
+        margin-left: 0;
+    }
+} 

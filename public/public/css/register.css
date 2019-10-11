@@ -1,0 +1,34 @@
+body{
+    background: rgba(48,101,248, 0.3);
+}
+.navbar{
+    background-color: rgb(7,4,62);
+}
+.navbar-brand{
+    color:#d9534f;
+}
+.nav-link{
+    color:#d9534f;
+}
+#logo{
+    font-size: 700;
+    font-weight: 700;
+    font-family: cursive;
+}
+.container{
+    padding-top: 70px;
+}
+.left-side{
+    margin-top:20%;
+}
+h5{
+    font-size: 200%;
+    font-weight: 900;
+    color:rgb(7,4,62);
+}
+h4{
+    color:rgb(7,4,62);
+}
+p{
+    color:rgb(7,4,62);
+}

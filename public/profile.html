@@ -14,14 +14,21 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet"> 
     <!-- Custom Css -->
     <link rel="stylesheet" href="./public/css/custom.css">
+    <!-- JQuery and Session -->
+    <script src="./public/js/jquery-3.2.1.min.js"></script>
+    <script src="./public/js/jquerysession.js"></script>
     <style>
         ul, h4 {
             font-family: Quicksand;
         }
+
+        /* Media Queries Handline */
+        @media only screen and (max-width: 767px) {
+            .sect1 {
+                height: 120vh;
+            }
+        }
     </style>
-    <!-- JQuery and Session -->
-    <script src="./public/js/jquery-3.2.1.min.js"></script>
-    <script src="./public/js/jquerysession.js"></script>
   </head>
   <body>
     <!--navbar-->
@@ -47,33 +54,26 @@
     <section class="sect1">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <div class="card p-4 mt-4">
+                <div class="col-md-10 mx-auto" id="profile-page">
+                    <div class="card p-4 mt-4"  style="background: white;">
                         <div>
-                            <h4 class="text-center"><span id="name"></span>'s Profile</h4>
+                            <h4 class="text-center"><span id="name">My</span> Profile <button id="deleteAccount" class="btn btn-danger btn-sm float-right"><i class="fas fa-exclamation-circle"></i> Delete my account</button></h4>
                         </div>
-                       <div class="row">
-                           <div class="col-md-12 mx-auto">
-                                <div class="card-body" id="freelance-profile-info">
-                                    <!-- jQuery populates data here -->
-                                </div>
-                           </div>
-                       </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                    <a href="./index.html" class="btn btn-outline-primary"><i class="fas fa-chevron-circle-left"></i> Back to Home</a>
-                            </div>
-                            <div class="col-md-6">
-                                    <a href="#" class="btn btn-outline-success float-right">Contact Me <i class="fas fa-phone-square"></i></a>
-                            </div>
+                        <div class="card-body" id="profile-info">
+                            <!-- jQuery Populates Data -->
+                            
+                        </div>
+                        <div>
+                            <a href="./index.html" class="btn btn-primary"><i class="fas fa-chevron-circle-left"></i> Back to Home</a>
+                            <a href="./editProfile.html" class="btn btn-info float-right"><i class="fas fa-edit"></i> Edit Profile</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </section>
 
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

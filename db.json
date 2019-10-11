@@ -1,33 +1,143 @@
 {
-  "freelancer": [
+  "Freelancers": [
     {
-      "name": "fred",
-      "email": "fred@gmail.com",
-      "country": "Finland",
-      "skill": "Web developer",
-      "description": "I will build a robust application for, with the required functionality.",
-      "price": "$50/hr",
-      "username": "fredo",
-      "password": "asd23fv43",
+      "name": "Yahaya Yohanna",
+      "email": "yasholma@yahoo.com",
+      "password": "Admin@12",
+      "skill": "Java Developer",
+      "phone": "08067764535",
+      "price": "4000",
+      "gender": "Male",
+      "description": "I code with Java and have a lot of experience. I can replicate almost anything you want. Select me and enjoy.I code with Java and have a lot of experience. I can replicate almost anything you want. Select me and enjoy.I code with Java and have a lot of experience. I can replicate almost anything you want. Select me and enjoy. have a lot of experience. I can replicate almost anything you want. Select me and enjoy.have a lot of experience. I can replicate almost anything you want. Select me and enjoy.",
+      "image": "face1.jpg",
       "id": 1
+    },
+    {
+      "name": "John Alex",
+      "email": "johndoe@gmail.com",
+      "password": "Admin@12",
+      "skill": "Mobile Developer",
+      "phone": "08056787643",
+      "price": "7000",
+      "gender": "Male",
+      "description": "Use an android application that can enhance your company's credibility. Contact me for more details.",
+      "image": "face3.jpg",
+      "id": 2
+    },
+    {
+      "name": "Mary Jane",
+      "email": "maryjane@gmail.com",
+      "password": "Admin@12",
+      "skill": "C# Developer",
+      "phone": "09033445566",
+      "price": "4000",
+      "gender": "Female",
+      "description": ".NET Apps is what i do. Contact me and get amazing secured apps.",
+      "image": "face2.jpg",
+      "id": 4
+    },
+    {
+      "name": "Moose Ken",
+      "email": "yasholma1@gmail.com",
+      "password": "Admin@12",
+      "skill": "Designer",
+      "phone": "08103477988",
+      "price": "4000",
+      "gender": "Male",
+      "description": "Make amazing designs with me, wow, i can surprise you.",
+      "image": "face4.jpg",
+      "id": 5
+    },
+    {
+      "name": "Adamu Ali",
+      "email": "adamu@gmail.com",
+      "password": "Admin@12",
+      "skill": "Tester",
+      "phone": "08101234567",
+      "price": "6000",
+      "gender": "Male",
+      "description": "I test your application, i can handle critical test and ensure your application meets the ultimate test.",
+      "image": "face7.jpg",
+      "id": 7
+    },
+    {
+      "name": "Smith Kingsley",
+      "email": "smith@gmail.com",
+      "password": "Admin@12",
+      "skill": "Analyst",
+      "phone": "08088998899",
+      "price": "10000",
+      "gender": "Male",
+      "description": "You need your problem to be analysed? I am the best candidate in the game. Just checkout my profile.",
+      "image": "face8.jpg",
+      "id": 8
+    },
+    {
+      "name": "Joe Felix",
+      "email": "joefelix@gmail.com",
+      "password": "123456",
+      "skill": "Analyst",
+      "id": 9
+    },
+    {
+      "name": "Fola Kayode",
+      "email": "folakayode@gmail.com",
+      "password": "123456",
+      "skill": "C# Developer",
+      "id": 10
+    },
+    {
+      "name": "Test Test",
+      "email": "test@gmail.com",
+      "password": "Test@12",
+      "skill": "Web Designer",
+      "id": 12
+    },
+    {
+      "name": "ade Adedudu",
+      "email": "ade@ade.com",
+      "password": "123456@Ade",
+      "skill": "Senior  - Hacker",
+      "id": 13
+    },
+    {
+      "name": "Uche Mike",
+      "email": "uchemike@gmail.com",
+      "password": "Uche@12",
+      "skill": "Developer",
+      "id": 14
+    },
+    {
+      "name": "Mike King",
+      "email": "mikeking@gmail.com",
+      "password": "Mike@123",
+      "skill": "Modeling",
+      "id": 15
+    },
+    {
+      "name": "Folahanmi Kolawole",
+      "email": "emmanuelkolawole4@gmail.com",
+      "password": "Fola12321@@",
+      "skill": "Full Stack Developer",
+      "id": 16
+    },
+    {
+      "name": "Test Test",
+      "email": "test1@gmail.com",
+      "password": "Test@12",
+      "skill": "Tester",
+      "phone": "08066774533",
+      "price": "3000",
+      "gender": "Female",
+      "description": "I love what i do and that is testing.",
+      "id": 18
     },
     {
       "name": "chibuzor",
       "email": "csc@gmail.com",
-      "country": "Rwanda",
-      "skill": "Graphics designer",
-      "price": "$20/hr",
-      "description": "wljjef'jroj",
-      "id": 2
-    },
-    {
-      "name": "fabian",
-      "email": "dds@yahoo.com",
-      "country": "Rwanda",
-      "skill": "",
-      "price": "$20/hr",
-      "description": "hiohioh",
-      "id": 3
+      "password": "Abc@098",
+      "skill": "Animation",
+      "id": 19
     }
   ]
 }
