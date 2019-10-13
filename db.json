@@ -1,3 +1,4 @@
+
 {
   "Freelancers": [
     {
@@ -10,8 +11,8 @@
       "gender": "Male",
       "description": "I code with Java and have a lot of experience. I can replicate almost anything you want. Select me and enjoy.I code with Java and have a lot of experience. I can replicate almost anything you want. Select me and enjoy.I code with Java and have a lot of experience. I can replicate almost anything you want. Select me and enjoy. have a lot of experience. I can replicate almost anything you want. Select me and enjoy.have a lot of experience. I can replicate almost anything you want. Select me and enjoy.",
       "image": "face1.jpg",
-      "bookname":"jemina floss",
-      "bookemail":"jfloss2gmail.com",
+      "bookname": "jemina floss",
+      "bookemail": "jfloss2gmail.com",
       "id": 1
     },
     {
@@ -24,6 +25,8 @@
       "gender": "Male",
       "description": "Use an android application that can enhance your company's credibility. Contact me for more details.",
       "image": "face3.jpg",
+      "bookname": "hakle joe",
+      "bookemail": "",
       "id": 2
     },
     {
@@ -128,6 +131,23 @@
       "password": "Abc@098",
       "skill": "Animation",
       "id": 19
+    },
+    {
+      "bookname": "halle jones",
+      "bookemail": "halle@gmail.com",
+      "id": 20
     }
+  ],
+  "Bookings": [
+    {
+      "name": "Yahaya hanna",
+      "email": "yaha@yahoo.com",
+      "id": 1
+    }
+   
   ]
 }
+
+
+
+ 
