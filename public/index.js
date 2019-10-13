@@ -15,34 +15,12 @@ function confirmPassword(password, confirm) {
     return password.trim() === confirm.trim();
 }
 
-// Validate Phone Number
-function validatePhone(phone) {
-    let re = /\d{11}$/;
-    return re.test(phone);
-}
 
 // Validate Price
 function validatePrice(price) {
     let re = /\d/g;
     return re.test(price);
 }
-
-function readURL(input) {
-    for(var i =0; i< input.files.length; i++){
-        if (input.files[i]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                var img = $('#imagePrev');
-                img.attr('src', e.target.result);
-            }
-            reader.readAsDataURL(input.files[i]);
-        }
-    }
-}
-
-$("#image").change(function(){
-    readURL(this);
-});
 
 // redirect function
 function redirectTo(url) {
@@ -53,12 +31,6 @@ function redirectTo(url) {
 const uId = $.session.get('userId') != 0 ? $.session.get('userId') : 0;
 let url = $(location).attr('pathname');
 
-// Redirect User if already logged in
-//if (url === '/login.html' || url === '/register.html') {
-    // check if user is already logged in
-   // if (uId !== undefined) redirectTo('index.html');
-//}
-
  // Redirect User if not logged in
  if (url === '/profile.html' || url === '/editProfile.html') {
     if (uId === undefined) redirectTo('login.html');
@@ -68,7 +40,6 @@ let url = $(location).attr('pathname');
 $(document).ready(function () {
     // Handling Sessions
     $("#logout").hide();
-    $("#profile").hide();
     const userId = $.session.get('userId') != 0 ? $.session.get('userId') : 0;
     let path = $(location).attr('pathname');
     if (userId === undefined) {
@@ -83,51 +54,7 @@ $(document).ready(function () {
         $("#profile").show();
     }
 
-    // Get all skills from the database
-    if (path === "/index.html" || path === "/viewAll.html" || url === '/about.html') {  
-        axios.get("http://localhost:3000/Freelancers")
-            .then(res => {
-                const users = res.data;
-                for (let i = 0; i <= 3; i++) {
-                    $("#popular-list").append(`
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">${users[i].skill}</a>
-                        </li>
-                    `);
-                }
-            })
-            .catch(e => console.log(e));
-    }
-
-
-    // Load freelancers from the database on the homepage
-   /* axios.get("http://localhost:3000/Freelancers?_start=0&_end=6")
-        .then(response => {
-            const users = response.data;
-            users.forEach(user => {
-                $(".top-freelancers").append(
-                    `
-                    <div class='col-md-4'>
-                        <div class="card mb-4">
-                            <div class="col-md-4 mx-auto p-2">
-                                <img src="./assets/img/users/${user.image !== undefined ? user.image : 'no_image.jpg'}" id="imagePrev" class="img-fluid rounded rounded-circle" alt="">
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title"><i class="fas fa-user-circle"></i> ${user.name}</h4>
-                                <p class="card-text"><i class="fas fa-envelope"></i> ${user.email}</p>
-                                <p class="card-text"><strong>Skill:</strong> ${user.skill}</p>
-                            </div>
-                            <div class="card-footer">
-                                <a href="view.html?id=${user.id}" class="btn btn-sm btn-outline-info float-right">View Profile</a>
-                            </div>  
-                        </div>
-                    </div>
-                    `
-                );
-            });
-        })
-        .catch(e => alert("Error loading data due to network issues"));  */
-        
+//To view all freelancers    
     if (path === '/viewAll.html') {
         axios.get("http://localhost:3000/Freelancers")
         .then(response => {
@@ -137,9 +64,6 @@ $(document).ready(function () {
                     `
                     <div class='col-md-4'>
                         <div class="card mb-4">
-                            <div class="col-md-4 mx-auto p-2">
-                                <img src="./assets/img/users/${user.image !== undefined ? user.image : 'no_image.jpg'}" id="imagePrev" class="img-fluid rounded rounded-circle" alt="">
-                            </div>
                             <div class="card-body">
                                 <h4 class="card-title"><i class="fas fa-user-circle"></i> ${user.name}</h4>
                                 <p class="card-text"><i class="fas fa-envelope"></i> ${user.email}</p>
@@ -147,7 +71,6 @@ $(document).ready(function () {
                             </div>
                             <div class="card-footer">
                                 <a href="view.html?id=${user.id}" class="btn btn-sm btn-outline-info float-right">View Profile</a>
-                                
                             </div>  
                         </div>
                     </div>
@@ -225,8 +148,7 @@ $(document).ready(function () {
                     // Registration proceeds
                     axios.post("http://localhost:3000/Freelancers", input)
                         .then(response => {
-                            // Do something when user successfully registers
-                            // alert(`You are registered successfully ${response.data.name}. Your can login now`);
+                            // redirect to login page
                             window.location = "login.html";
                         })
                         .catch(e => console.log(e));
@@ -268,12 +190,10 @@ $(document).ready(function () {
                             emailError.text('');
                             passwordError.text("");
 
-                            // Spinner starts turning to login user in
-
                             // set session and redirect to home
                             $.session.set('userId', user.id);
 
-                            // redirect freelancer to the homepage
+                            // redirect freelancer to the profile page
                             window.location.replace("profile.html");
                             return;
                         }
@@ -302,18 +222,11 @@ $(document).ready(function () {
                     `
                     <ul class="list-group">
                         <div class="row">
-                            <div class="col-md-6 mx-auto">
-                                <div class="text-center mb-1">
-                                    <img src="./assets/img/users/${user.image !== undefined ? user.image : 'no_image.jpg'}" id="imagePrev" class="img-fluid rounded rounded-circle" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-6">
                                 <li class="list-group-item"><i class="fas fa-user-circle border-right pr-1"></i> <strong>${user.name}</strong></li>
                                 <li class="list-group-item"><i class="fas fa-envelope border-right pr-1"></i> ${user.email}</li>
                                 <li class="list-group-item"><i class="fas fa-user border-right pr-1"></i> ${user.gender !== undefined ? user.gender : 'NA'}</li>
-                                <li class="list-group-item"><i class="fas fa-phone border-right pr-1"></i> ${user.phone !== undefined ? user.phone : 'NA'}</li>
+                                <li class="list-group-item"><i class="fas fa-globe border-right pr-1"></i> ${user.country !== undefined ? user.country : 'NA'}</li>
                                 <li class="list-group-item"><i class="fas fa-cogs border-right pr-1"></i> ${user.skill}</li>
                                 <li class="list-group-item"><i class="fas fa-money-bill border-right pr-1"></i> &#8358; ${user.price !== undefined ? user.price : 'NA'} / Hour (Negotiable)</li>
                             </div>
@@ -321,10 +234,6 @@ $(document).ready(function () {
                                 <li class="list-group-item"><i class="fab fa-invision border-right pr-1"></i> ${user.description !== undefined ? user.description : 'NA'}</li>
                             </div>
                         </div>
-                    </ul>
-                    <h5>Bookings</h5>
-                    <ul>
-                    <li>one booking from ${user.bookname}</li><span><button>continue conversation</button></span>
                     </ul>
                     `
                 );
@@ -371,18 +280,11 @@ $(document).ready(function () {
                     `
                     <ul class="list-group">
                         <div class="row">
-                            <div class="col-md-6 mx-auto">
-                                <div class="text-center mb-1">
-                                    <img src="./assets/img/users/${user.image !== undefined ? user.image : 'no_image.jpg'}" id="imagePrev" class="img-fluid rounded rounded-circle" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-6">
                                 <li class="list-group-item"><i class="fas fa-user-circle border-right pr-1"></i> <strong>${user.name}</strong></li>
                                 <li class="list-group-item"><i class="fas fa-envelope border-right pr-1"></i> ${user.email}</li>
                                 <li class="list-group-item"><i class="fas fa-user border-right pr-1"></i> ${user.gender !== undefined ? user.gender : 'NA'}</li>
-                                <li class="list-group-item"><i class="fas fa-phone border-right pr-1"></i> ${user.phone !== undefined ? user.phone : 'NA'}</li>
+                                <li class="list-group-item"><i class="fas fa-globe border-right pr-1"></i> ${user.country !== undefined ? user.country : 'NA'}</li>
                                 <li class="list-group-item"><i class="fas fa-cogs border-right pr-1"></i> ${user.skill}</li>
                                 <li class="list-group-item"><i class="fas fa-money-bill border-right pr-1"></i> &#8358; ${user.price !== undefined ? user.price : 'NA'} / Hour (Negotiable)</li>
                             </div>
@@ -392,8 +294,8 @@ $(document).ready(function () {
                         </div>
                     </ul>
                     <div class="col-md-6">
-                    <a href="./book.html?id=${user.id}" class="btn btn-outline-success float-right">Contact Me <i class="fas fa-phone-square"></i></a>
-            </div>
+                     <a href="./book.html?id=${user.id}" class="btn btn-outline-success float-right">Contact Me <i class="fas fa-phone-square"></i></a>
+                    </div>
                     `
                 );
             })
@@ -412,44 +314,36 @@ $(document).ready(function () {
                 $("#email").val(user.email);
                 $("#password").val(user.password);
                 $("#skill").val(user.skill);
-                $("#phone").val(user.phone);
+                $("#country").val(user.country);
                 $("#price").val(user.price);
                 $("#gender").val(user.gender);
                 $("#description").val(user.description);
-                $("#prevImage").val(user.image);
-                $("#imagePrev").prop('src', `./assets/img/users/${user.image}`)
             })
             .catch(e => console.log(e));
 
         $("#updateBtn").on('click', (e) => {
             e.preventDefault();
 
-            let file = $('input#image')[0].files;
-            let imageName = file.length > 0 ? file[0].name : "";
-            
-
             let name = $("#name").val();
             let email = $("#email").val();
             let password = $("#password").val();
             let skill = $("#skill").val();
-            let phone = $("#phone").val();
+            let country = $("#country").val();
             let price = $("#price").val();
             let gender = $("#gender").val();
             let description = $("#description").val();
-            let image = imageName !== "" ? imageName : $("#prevImage").val();
-
 
             // Error feilds
             let nameError = $("#nameError");
             let passwordError = $("#passwordError");
             let skillError = $("#skillError");
-            let phoneError = $("#phoneError");
+            let countryError = $("#countryError");
             let priceError = $("#priceError");
             let genderError = $("#genderError");
             let descriptionError = $("#descriptionError");
             let registerGeneralError = $("#registerGeneralError");
 
-            if (name === "" || password === "" || skill === "" || phone === "" || price === "" || gender.length === 0 || description === "") {
+            if (name === "" || password === "" || skill === "" || country === "" || price === "" || gender.length === 0 || description === "") {
                 registerGeneralError.removeClass('d-none');
             } else if (name === "" || name.length < 6) {
                 $("#name").css('border', '1px solid red');
@@ -463,9 +357,6 @@ $(document).ready(function () {
             } else if (skill.length <= 3 || skill === "") {
                 $("#skill").css('border', '1px solid red');
                 skillError.text("Skill minimum length is 4");
-            } else if (!validatePhone(phone)) {
-                $("#phone").css('border', '1px solid red');
-                phoneError.text("Enter a valid phone number of 11 characters");
             } else if (!validatePrice(price)) {
                 $("#price").css('border', '1px solid red');
                 priceError.text("Price can only be numbers");
@@ -481,13 +372,13 @@ $(document).ready(function () {
                 email = email.trim();
                 password = password.trim();
                 skill = skill.trim();
-                phone = phone.trim();
+                country = country.trim();
                 price = price.trim();
                 gender = gender.trim();
                 description = description.trim();
                 
 
-                const input = { name, email, password, skill, phone, price, gender, description, image };
+                const input = { name, email, password, skill, country, price, gender, description, image };
 
                 axios.put(`http://localhost:3000/Freelancers/${userId}`, input)
                     .then(res => {
@@ -498,51 +389,7 @@ $(document).ready(function () {
             }
         });
     }
-    /////////try//////////
-    if (path === `./book.html?id=${userId}`){
-        console.log(path)
-        $(".bookme").on('click', (e) => {
-            e.preventDefault();
-
-            let bookname = $("#bookname").val();
-            let bookemail = $("#bookemail").val();
-            
-
-
-            // Error feilds
-            let booknameError = $("#booknameError");
-           
-            let registerGeneralError = $("#registerGeneralError");
-
-            if (bookname === "" || bookemail === "" ) {
-                registerGeneralError.removeClass('d-none');
-            } else if (bookname === "" || bookname.length < 6) {
-                $("#name").css('border', '1px solid red');
-                booknameError.text("Please, enter a valid name");
-            }  else {
-                // Remove white trailing spaces from all input values
-                bookname = bookname.trim();
-                bookemail = bookemail.trim();
-                
-                
-
-                const input = { bookname, bookemail};
-
-                axios.put(`http://localhost:3000/Freelancers/${userId}`, input)
-                    .then(res => {
-                        alert("Your profile has been updated successfully");
-                        redirectTo('view.html');
-                    })
-                    .catch(e => console.log(e));
-            }
-        });
-
-    }
-
     
-    /////////////////////
-
-
     // Loging freelancer out
     $("#logout").on('click', (e) => {
         e.preventDefault();
