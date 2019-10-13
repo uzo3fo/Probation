@@ -147,6 +147,7 @@ $(document).ready(function () {
                             </div>
                             <div class="card-footer">
                                 <a href="view.html?id=${user.id}" class="btn btn-sm btn-outline-info float-right">View Profile</a>
+                                
                             </div>  
                         </div>
                     </div>
@@ -292,9 +293,7 @@ $(document).ready(function () {
     /*  Profile handling goes here..  **/
     // Only do this in profile.html page
     if (path === '/profile.html') {
-        $("#contactme").on('click', (e) => {
-            e.preventDefault();
-            $('#profile-info').append('you have been contacted check your email') })
+
         // get the user info from the database and preload the fields
         axios.get(`http://localhost:3000/Freelancers/${userId}`)
             .then(response => {
@@ -322,6 +321,10 @@ $(document).ready(function () {
                                 <li class="list-group-item"><i class="fab fa-invision border-right pr-1"></i> ${user.description !== undefined ? user.description : 'NA'}</li>
                             </div>
                         </div>
+                    </ul>
+                    <h5>Bookings</h5>
+                    <ul>
+                    <li>one booking from ${user.bookname}</li><span><button>continue conversation</button></span>
                     </ul>
                     `
                 );
@@ -388,6 +391,9 @@ $(document).ready(function () {
                             </div>
                         </div>
                     </ul>
+                    <div class="col-md-6">
+                    <a href="./book.html?id=${user.id}" class="btn btn-outline-success float-right">Contact Me <i class="fas fa-phone-square"></i></a>
+            </div>
                     `
                 );
             })
@@ -492,7 +498,49 @@ $(document).ready(function () {
             }
         });
     }
+    /////////try//////////
+    if (path === `./book.html?id=${userId}`){
+        console.log(path)
+        $(".bookme").on('click', (e) => {
+            e.preventDefault();
+
+            let bookname = $("#bookname").val();
+            let bookemail = $("#bookemail").val();
+            
+
+
+            // Error feilds
+            let booknameError = $("#booknameError");
+           
+            let registerGeneralError = $("#registerGeneralError");
+
+            if (bookname === "" || bookemail === "" ) {
+                registerGeneralError.removeClass('d-none');
+            } else if (bookname === "" || bookname.length < 6) {
+                $("#name").css('border', '1px solid red');
+                booknameError.text("Please, enter a valid name");
+            }  else {
+                // Remove white trailing spaces from all input values
+                bookname = bookname.trim();
+                bookemail = bookemail.trim();
+                
+                
+
+                const input = { bookname, bookemail};
+
+                axios.put(`http://localhost:3000/Freelancers/${userId}`, input)
+                    .then(res => {
+                        alert("Your profile has been updated successfully");
+                        redirectTo('view.html');
+                    })
+                    .catch(e => console.log(e));
+            }
+        });
+
+    }
+
     
+    /////////////////////
 
 
     // Loging freelancer out
@@ -502,7 +550,7 @@ $(document).ready(function () {
         if ($.session.get('userId') != 0) {
             $.session.clear();
             $.session.remove('userId');
-            window.location.replace("login.html");
+            window.location.replace("index.html");
         }
     }); 
 
