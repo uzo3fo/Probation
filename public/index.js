@@ -235,6 +235,10 @@ $(document).ready(function () {
                             </div>
                         </div>
                     </ul>
+                    <div class="display-5 warning" id="bookings">
+                    
+                    </div>
+                    
                     `
                 );
             })
@@ -260,7 +264,9 @@ $(document).ready(function () {
         })
                 
     }
+////////////////////////////////////
 
+///////////////////////////////
 
 
 
@@ -305,7 +311,7 @@ $(document).ready(function () {
 
     // Only do this in editProfile.html
     if (path === '/editProfile.html') {
-
+        
         // Get the user record from the database and auto fill the fields
         axios.get(`http://localhost:3000/Freelancers/${userId}`)
             .then(response => {
@@ -318,6 +324,7 @@ $(document).ready(function () {
                 $("#price").val(user.price);
                 $("#gender").val(user.gender);
                 $("#description").val(user.description);
+                
             })
             .catch(e => console.log(e));
 
@@ -332,6 +339,7 @@ $(document).ready(function () {
             let price = $("#price").val();
             let gender = $("#gender").val();
             let description = $("#description").val();
+           
 
             // Error feilds
             let nameError = $("#nameError");
@@ -376,9 +384,8 @@ $(document).ready(function () {
                 price = price.trim();
                 gender = gender.trim();
                 description = description.trim();
-                
 
-                const input = { name, email, password, skill, country, price, gender, description, image };
+                const input = { name, email, password, skill, country, price, gender, description };
 
                 axios.put(`http://localhost:3000/Freelancers/${userId}`, input)
                     .then(res => {
@@ -389,7 +396,79 @@ $(document).ready(function () {
             }
         });
     }
-    
+    /*for Bookings**/
+    axios.get(`http://localhost:3000/Bookings/${userId}`)
+.then(response => {
+    const user = response.data;
+    $("#profile-info").append(
+        `
+        <div class="display-5 warning" id="bookings">
+        <h5>BOOKINGS:</h5>
+        <ul>
+        <li>One booking from ${user.bookname}, click <a href="#" >here</a> to continue conversation</li>
+        </ul>
+        </div>
+        
+        `
+    );
+})
+.catch(e => console.log(e));
+   if(path === "/book.html"){
+    const burl = window.location.href;
+    const burlArray = burl.split("id=");
+    let id = burlArray[1];
+    id = parseInt(id);
+         axios.get(`http://localhost:3000/Bookings/${id}`)
+            .then(response => {
+                const user = response.data;
+                $("#bookname").val(user.bookname);
+                $("#bookemail").val(user.bookemail);
+                
+                
+            })
+            .catch(e => console.log(e));
+
+        $("#bookme").on('click', (e) => {
+            e.preventDefault();
+
+            let bookname = $("#bookname").val();
+            let bookemail = $("#bookemail").val();
+           
+           
+
+            // Error feilds
+            let booknameError = $("#booknameError");
+            
+            let registerGeneralError = $("#registerGeneralError");
+
+            if (bookname === "") {
+                registerGeneralError.removeClass('d-none');
+            } else if (bookname === "" || bookname.length < 6) {
+                $("#bookname").css('border', '1px solid red');
+                booknameError.text("Please, enter a valid name");
+            }  else {
+                // Remove white trailing spaces from all input values
+               bookname = bookname.trim();
+                bookemail = bookemail.trim();
+                
+
+                const output = {bookname, bookemail };
+
+                axios.put(`http://localhost:3000/Bookings/${id}`, output)
+                    .then(res => {
+                        alert("Your booking have been noted, you will be contacted shortly");
+                        redirectTo('index.html');
+                    })
+                    .catch(e => console.log(e));
+            }
+        });
+    }
+//if(path === `book.html`){
+   
+
+
+//}
+    //////////////////
     // Loging freelancer out
     $("#logout").on('click', (e) => {
         e.preventDefault();
