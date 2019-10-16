@@ -411,6 +411,7 @@ $(document).ready(function () {
     );
             })
         .catch(e => console.log(e));
+        
          if(path === "/book.html"){
          const burl = window.location.href;
          const burlArray = burl.split("id=");
