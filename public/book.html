@@ -40,20 +40,33 @@
     <section class="sect1">
         <div class="container register">
             <div class="row">
-                <div class="col-md-4 mx-auto mt-4">
+                <div class="col-md-6 mx-auto mt-4">
                     <form method="post" id="reg-form" class="card bg-white p-4">
                         <h4 class="text-center text-uppercase">Book a FreeLancer</h4>
                         <div class="alert alert-danger d-none" id="registerGeneralError"><small><strong>All fields are required</strong></small></div>
                         <hr>
 
                         <div class="form-group">
+                            <label for="bookname">NAME:</label>
                             <input type="text" name="bookname" id="bookname" class="form-control" placeholder="">
                             <small id="booknameError" class="text-danger"></small>
                         </div>
 
                         <div class="form-group">
+                            <label for="bookemail">EMAIL:</label>
                             <input type="text" name="bookemail" id="bookemail" class="form-control" placeholder="">
                             <small id="bookemailError" class="text-danger"></small>
+                        </div>
+                        <!-- Description -->
+                        <div class="form-group">
+                            <label for="bookdesc">SUMMARY:</label>
+                            <textarea name="bookdesc" id="bookdesc" cols="30" placeholder="Give a summary of what you want..." rows="5" class="form-control"></textarea>
+                            <small id="bookdescrError" class="text-danger"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="etod">Expected Time Of Delivery:</label>
+                            <input type="text" name="etod" id="etod" class="form-control" placeholder="e.g 10 days">
+                            <small id="etod" class="text-danger"></small>
                         </div>
                         <!-- Register In button -->
                         <div class="form-group">

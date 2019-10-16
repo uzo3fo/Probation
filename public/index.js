@@ -228,7 +228,7 @@ $(document).ready(function () {
                                 <li class="list-group-item"><i class="fas fa-user border-right pr-1"></i> ${user.gender !== undefined ? user.gender : 'NA'}</li>
                                 <li class="list-group-item"><i class="fas fa-globe border-right pr-1"></i> ${user.country !== undefined ? user.country : 'NA'}</li>
                                 <li class="list-group-item"><i class="fas fa-cogs border-right pr-1"></i> ${user.skill}</li>
-                                <li class="list-group-item"><i class="fas fa-money-bill border-right pr-1"></i> &#8358; ${user.price !== undefined ? user.price : 'NA'} / Hour (Negotiable)</li>
+                                <li class="list-group-item"><i class="fas fa-money-bill border-right pr-1"></i> ${user.price !== undefined ? user.price : 'NA'}</li>
                             </div>
                             <div class="col-md-6">
                                 <li class="list-group-item"><i class="fab fa-invision border-right pr-1"></i> ${user.description !== undefined ? user.description : 'NA'}</li>
@@ -264,10 +264,6 @@ $(document).ready(function () {
         })
                 
     }
-////////////////////////////////////
-
-///////////////////////////////
-
 
 
     // Only do this in view.html
@@ -292,15 +288,15 @@ $(document).ready(function () {
                                 <li class="list-group-item"><i class="fas fa-user border-right pr-1"></i> ${user.gender !== undefined ? user.gender : 'NA'}</li>
                                 <li class="list-group-item"><i class="fas fa-globe border-right pr-1"></i> ${user.country !== undefined ? user.country : 'NA'}</li>
                                 <li class="list-group-item"><i class="fas fa-cogs border-right pr-1"></i> ${user.skill}</li>
-                                <li class="list-group-item"><i class="fas fa-money-bill border-right pr-1"></i> &#8358; ${user.price !== undefined ? user.price : 'NA'} / Hour (Negotiable)</li>
+                                <li class="list-group-item"><i class="fas fa-money-bill border-right pr-1"></i> &#36; ${user.price !== undefined ? user.price : 'NA'} / Hour</li>
                             </div>
                             <div class="col-md-6">
                                 <li class="list-group-item"><i class="fab fa-invision border-right pr-1"></i> ${user.description !== undefined ? user.description : 'NA'}</li>
                             </div>
                         </div>
-                    </ul>
+                    </ul><br>
                     <div class="col-md-6">
-                     <a href="./book.html?id=${user.id}" class="btn btn-outline-success float-right">Contact Me <i class="fas fa-phone-square"></i></a>
+                     <a href="./book.html?id=${user.id}" class="btn btn-outline-success float-right ml-4">Contact Me <i class="fas fa-phone-square"></i></a>
                     </div>
                     `
                 );
@@ -398,31 +394,37 @@ $(document).ready(function () {
     }
     /*for Bookings**/
     axios.get(`http://localhost:3000/Bookings/${userId}`)
-.then(response => {
+        .then(response => {
     const user = response.data;
     $("#profile-info").append(
         `
         <div class="display-5 warning" id="bookings">
         <h5>BOOKINGS:</h5>
         <ul>
-        <li>One booking from ${user.bookname}, click <a href="#" >here</a> to continue conversation</li>
+        <div id="book-details">
+        <li>One booking from <em>${user.bookname}</em>. Click <a href="bookDetails.html" >here</a> to view details</li>
+        </div>
         </ul>
         </div>
         
         `
     );
-})
-.catch(e => console.log(e));
-   if(path === "/book.html"){
-    const burl = window.location.href;
-    const burlArray = burl.split("id=");
-    let id = burlArray[1];
-    id = parseInt(id);
+            })
+        .catch(e => console.log(e));
+         if(path === "/book.html"){
+         const burl = window.location.href;
+         const burlArray = burl.split("id=");
+         let id = burlArray[1];
+         id = parseInt(id);
+
+    /**posting bookings to profile page */
          axios.get(`http://localhost:3000/Bookings/${id}`)
             .then(response => {
                 const user = response.data;
                 $("#bookname").val(user.bookname);
                 $("#bookemail").val(user.bookemail);
+                $("#bookdesc").val(user.bookdesc);
+                $("#etod").val(user.etod);
                 
                 
             })
@@ -433,6 +435,8 @@ $(document).ready(function () {
 
             let bookname = $("#bookname").val();
             let bookemail = $("#bookemail").val();
+            let bookdesc = $("#bookdesc").val();
+            let etod = $("#etod").val();
            
            
 
@@ -441,18 +445,26 @@ $(document).ready(function () {
             
             let registerGeneralError = $("#registerGeneralError");
 
-            if (bookname === "") {
+            if (bookname === "", bookemail=== " ", bookdesc === " ", etod === "") {
                 registerGeneralError.removeClass('d-none');
             } else if (bookname === "" || bookname.length < 6) {
                 $("#bookname").css('border', '1px solid red');
                 booknameError.text("Please, enter a valid name");
-            }  else {
+            } else if (bookemail === "" || bookemail.length < 6) {
+                $("#bookname").css('border', '1px solid red');
+                bookemailError.text("Please, enter a valid name");
+            }   else if (bookdesc.length < 10 || bookdesc.length > 700 || bookdesc === "") {
+                $("#bookdesc").css('border', '1px solid red');
+                bookdescError.text("Please, enter a valid name");}
+             else {
                 // Remove white trailing spaces from all input values
-               bookname = bookname.trim();
+                bookname = bookname.trim();
                 bookemail = bookemail.trim();
+                bookdesc = bookdesc.trim();
+                etod = etod.trim();
                 
 
-                const output = {bookname, bookemail };
+                const output = {bookname, bookemail, bookdesc, etod };
 
                 axios.put(`http://localhost:3000/Bookings/${id}`, output)
                     .then(res => {
@@ -463,12 +475,43 @@ $(document).ready(function () {
             }
         });
     }
-//if(path === `book.html`){
-   
 
+if (path === '/bookDetails.html') {
 
-//}
-    //////////////////
+    // get the user info from the database and preload the fields
+    axios.get(`http://localhost:3000/Bookings/${userId}`)
+        .then(response => {
+            const user = response.data;
+            $("#book-details").append(
+                `
+                <ul class="list-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <li class="list-group-item"><i class="fas fa-user-circle border-right pr-1"></i> <strong>${user.bookname}</strong></li>
+                            <li class="list-group-item"><i class="fas fa-envelope border-right pr-1"></i> ${user.bookemail}</li>
+                            <li class="list-group-item"><i class="fas fa-clock border-right pr-1"></i> ${user.etod}</li>
+                        </div>
+                        <div class="col-md-6">
+                            <li class="list-group-item"><i class="fab fa-invision border-right pr-1"></i> ${user.bookdesc}</li>
+                        </div>
+                    </div><br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <button class="btn btn-secondary">Accept</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-danger" id="deletebook">Cancel</button>
+                    </div>
+                </div> 
+                
+                `
+            );
+        })
+        .catch(e => console.log(e));
+            
+}
+//////////////////////////////////////////
+
     // Loging freelancer out
     $("#logout").on('click', (e) => {
         e.preventDefault();
