@@ -9,8 +9,6 @@
       "price": "40",
       "gender": "Male",
       "description": "I code with Javascript and have a lot of experience. I can replicate almost anything you want. Select me and enjoy.can replicate almost anything you want. Select me and enjoy.I code with Java and have a lot of experience. I can replicate almost anything you want. Select me and enjoy.",
-      "bookname": "",
-      "bookemail": "",
       "id": 1
     },
     {
@@ -22,8 +20,6 @@
       "price": "70",
       "gender": "Male",
       "description": "I can secure your applicationa. Contact me for more details.I can secure your applicationa. Contact me for more details.",
-      "bookname": "felix navida",
-      "bookemail": "",
       "id": 2
     },
     {
@@ -35,8 +31,6 @@
       "price": "40",
       "gender": "Female",
       "description": ".NET Apps is what i do. Contact me and get amazing secured apps..NET Apps is what i do. Contact me and get amazing secured apps.",
-      "bookname": "",
-      "bookemail": "",
       "id": 3
     },
     {
@@ -48,8 +42,6 @@
       "price": "40",
       "gender": "Male",
       "description": "Make amazing designs with me, wow, i can surprise you.Make amazing designs with me, wow, i can surprise you.",
-      "bookname": "",
-      "bookemail": "",
       "id": 4
     },
     {
@@ -61,8 +53,6 @@
       "price": "10",
       "gender": "Male",
       "description": "You need your problem to be analysed? I am the best candidate in the game. Just checkout my profile.",
-      "bookname": "",
-      "bookemail": "",
       "id": 5
     },
     {
@@ -74,8 +64,6 @@
       "price": "100",
       "gender": "Male",
       "description": "You need your problem to be analysed? I am the best candidate in the game. Just checkout my profile.",
-      "bookname": "",
-      "bookemail": "",
       "id": 6
     },
     {
@@ -87,8 +75,6 @@
       "price": "30",
       "gender": "Female",
       "description": "I will develop a robust application for you with python.I will develop a robust application for you with python",
-      "bookname": "",
-      "bookemail": "",
       "id": 7
     },
     {
@@ -101,6 +87,17 @@
       "gender": "Female",
       "description": "I will create contents for your blogs and websites. Holla.I will create contents for your blogs and websites. Holla.",
       "id": 8
+    },
+    {
+      "name": "philip ogbuogu",
+      "email": "philip@gmail.com",
+      "password": "Abc-123",
+      "skill": "Animator",
+      "country": "Nigeria",
+      "price": "$50/hr",
+      "gender": "Male",
+      "description": "I will create 2D and 3D animation fot your business advertisement.I will create 2D and 3D animation fot your business advertisement.",
+      "id": 9
     }
   ],
   "Bookings": [
@@ -117,6 +114,97 @@
       "bookdesc": "jbinio",
       "etod": "10 days",
       "id": 2
+    },
+    {
+      "bookname": "",
+      "bookemail": "",
+      "bookdesc": "",
+      "etod": "",
+      "id": 3
+    },
+    {
+      "bookname": "",
+      "bookemail": "",
+      "bookdesc": "",
+      "etod": "",
+      "id": 4
+    },
+    {
+      "bookname": "",
+      "bookemail": "",
+      "bookdesc": "",
+      "etod": "",
+      "id": 5
+    },
+    {
+      "bookname": "",
+      "bookemail": "",
+      "bookdesc": "",
+      "etod": "",
+      "id": 6
+    },
+    {
+      "bookname": "",
+      "bookemail": "",
+      "bookdesc": "",
+      "etod": "",
+      "id": 7
+    },
+    {
+      "bookname": "",
+      "bookemail": "",
+      "bookdesc": "",
+      "etod": "",
+      "id": 8
+    },
+    {
+      "bookname": "Ousman Khalil",
+      "bookemail": "ousman@gmail.com",
+      "bookdesc": "I need a video animation for my supermarket advert.",
+      "etod": "12 days",
+      "id": 9
+    },
+    {
+      "bookname": "Ousman Khalil",
+      "bookemail": "ousman@gmail.com",
+      "bookdesc": "I will want  you to build an application for my chains of supermarket.",
+      "etod": "12 days",
+      "id": 10
+    },
+    {
+      "bookname": "",
+      "bookemail": "",
+      "bookdesc": "",
+      "etod": "",
+      "id": 11
+    },
+    {
+      "bookname": "",
+      "bookemail": "",
+      "bookdesc": "",
+      "etod": "",
+      "id": 12
+    },
+    {
+      "bookname": "",
+      "bookemail": "",
+      "bookdesc": "",
+      "etod": "",
+      "id": 13
+    },
+    {
+      "bookname": "",
+      "bookemail": "",
+      "bookdesc": "",
+      "etod": "",
+      "id": 14
+    },
+    {
+      "bookname": "",
+      "bookemail": "",
+      "bookdesc": "",
+      "etod": "",
+      "id": 15
     }
   ]
 }

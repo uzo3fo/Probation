@@ -39,7 +39,7 @@ let url = $(location).attr('pathname');
 
 $(document).ready(function () {
     // Handling Sessions
-    $("#logout").hide();
+       $("#logout").hide();
     const userId = $.session.get('userId') != 0 ? $.session.get('userId') : 0;
     let path = $(location).attr('pathname');
     if (userId === undefined) {
@@ -83,11 +83,7 @@ $(document).ready(function () {
 
     // Registering a new freelancer
     $("#register").on('click', (e) => {
-        e.preventDefault();
-        // registerGeneralErrorTimeOut
-        setTimeout(() => {
-            $("#registerGeneralError").addClass("d-none");
-        }, 5000);
+        e.preventDefault(); 
 
         let name = $("#name").val();
         let email = $("#email").val();
@@ -190,7 +186,7 @@ $(document).ready(function () {
                             emailError.text('');
                             passwordError.text("");
 
-                            // set session and redirect to home
+                            // set session
                             $.session.set('userId', user.id);
 
                             // redirect freelancer to the profile page
@@ -295,7 +291,7 @@ $(document).ready(function () {
                             </div>
                         </div>
                     </ul><br>
-                    <div class="col-md-6">
+                    <div class="col-md-6 ml-4">
                      <a href="./book.html?id=${user.id}" class="btn btn-outline-success float-right ml-4">Contact Me <i class="fas fa-phone-square"></i></a>
                     </div>
                     `
@@ -396,10 +392,11 @@ $(document).ready(function () {
     axios.get(`http://localhost:3000/Bookings/${userId}`)
         .then(response => {
     const user = response.data;
+    if(`${user.bookname}` !== ""){
     $("#profile-info").append(
         `
         <div class="display-5 warning" id="bookings">
-        <h5>BOOKINGS:</h5>
+        <h5 class="text-info">BOOKINGS:</h5>
         <ul>
         <div id="book-details">
         <li>One booking from <em>${user.bookname}</em>. Click <a href="bookDetails.html" >here</a> to view details</li>
@@ -408,7 +405,16 @@ $(document).ready(function () {
         </div>
         
         `
-    );
+    );}else{$("#profile-info").append(
+        `
+        <div class="display-5 warning" id="no-bookings">
+        <h5 class="text-info">BOOKINGS:</h5>
+        <ul>
+        <li><em> You have no bookings</em></li>
+        </ul>
+        </div>
+        
+        `);}
             })
         .catch(e => console.log(e));
         
@@ -479,7 +485,7 @@ $(document).ready(function () {
 
 if (path === '/bookDetails.html') {
 
-    // get the user info from the database and preload the fields
+    // get the booking info from the database and preload the fields
     axios.get(`http://localhost:3000/Bookings/${userId}`)
         .then(response => {
             const user = response.data;
@@ -511,7 +517,7 @@ if (path === '/bookDetails.html') {
         .catch(e => console.log(e));
             
 }
-//////////////////////////////////////////
+
 
     // Loging freelancer out
     $("#logout").on('click', (e) => {
