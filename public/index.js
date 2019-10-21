@@ -389,7 +389,7 @@ $(document).ready(function () {
         });
     }
     /*for Bookings**/
-
+/**to notify freelancer about a booking */
     axios.get(`http://localhost:3000/Bookings/${userId}`)
         .then(response => {
     const user = response.data;
@@ -425,7 +425,7 @@ $(document).ready(function () {
          let id = burlArray[1];
          id = parseInt(id);
 
-    /**posting bookings to profile page */
+    /**booking a freelancer */
          axios.get(`http://localhost:3000/Bookings/${id}`)
             .then(response => {
                 const user = response.data;
