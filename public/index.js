@@ -224,7 +224,7 @@ $(document).ready(function () {
                                 <li class="list-group-item"><i class="fas fa-user border-right pr-1"></i> ${user.gender !== undefined ? user.gender : 'NA'}</li>
                                 <li class="list-group-item"><i class="fas fa-globe border-right pr-1"></i> ${user.country !== undefined ? user.country : 'NA'}</li>
                                 <li class="list-group-item"><i class="fas fa-cogs border-right pr-1"></i> ${user.skill}</li>
-                                <li class="list-group-item"><i class="fas fa-money-bill border-right pr-1"></i> ${user.price !== undefined ? user.price : 'NA'}</li>
+                                <li class="list-group-item"><i class="fas fa-money-bill border-right pr-1"></i> &#36;${user.price !== undefined ? user.price : 'NA'}</li>
                             </div>
                             <div class="col-md-6">
                                 <li class="list-group-item"><i class="fab fa-invision border-right pr-1"></i> ${user.description !== undefined ? user.description : 'NA'}</li>
@@ -389,6 +389,7 @@ $(document).ready(function () {
         });
     }
     /*for Bookings**/
+
     axios.get(`http://localhost:3000/Bookings/${userId}`)
         .then(response => {
     const user = response.data;

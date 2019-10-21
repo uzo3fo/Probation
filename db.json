@@ -83,7 +83,7 @@
       "password": "Abc-123",
       "skill": "content writer",
       "country": "Brazil",
-      "price": "$20/hr",
+      "price": "20",
       "gender": "Female",
       "description": "I will create contents for your blogs and websites. Holla.I will create contents for your blogs and websites. Holla.",
       "id": 8
@@ -94,7 +94,7 @@
       "password": "Abc-123",
       "skill": "Animator",
       "country": "Nigeria",
-      "price": "$50/hr",
+      "price": "50",
       "gender": "Male",
       "description": "I will create 2D and 3D animation fot your business advertisement.I will create 2D and 3D animation fot your business advertisement.",
       "id": 9
@@ -165,7 +165,7 @@
       "id": 9
     },
     {
-      "bookname": "Ousman Khalil",
+      "bookname": "johnny roberts",
       "bookemail": "ousman@gmail.com",
       "bookdesc": "I will want  you to build an application for my chains of supermarket.",
       "etod": "12 days",
