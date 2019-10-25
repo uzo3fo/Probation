@@ -102,17 +102,17 @@
   ],
   "Bookings": [
     {
-      "bookname": "joel tribianni",
-      "bookemail": "joel@gmail.com",
+      "bookname": "",
+      "bookemail": "",
       "bookdesc": "",
       "etod": "",
       "id": 1
     },
     {
-      "bookname": "phoebe bufer",
-      "bookemail": "phhoebe@gmail.com",
-      "bookdesc": "jbinio",
-      "etod": "10 days",
+      "bookname": "",
+      "bookemail": "",
+      "bookdesc": "",
+      "etod": "",
       "id": 2
     },
     {
@@ -158,17 +158,17 @@
       "id": 8
     },
     {
-      "bookname": "Ousman Khalil",
-      "bookemail": "ousman@gmail.com",
-      "bookdesc": "I need a video animation for my supermarket advert.",
-      "etod": "12 days",
+      "bookname": "",
+      "bookemail": "",
+      "bookdesc": "",
+      "etod": "",
       "id": 9
     },
     {
-      "bookname": "johnny roberts",
-      "bookemail": "ousman@gmail.com",
-      "bookdesc": "I will want  you to build an application for my chains of supermarket.",
-      "etod": "12 days",
+      "bookname": "",
+      "bookemail": "",
+      "bookdesc": "",
+      "etod": "",
       "id": 10
     },
     {
