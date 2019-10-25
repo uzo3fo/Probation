@@ -2,7 +2,8 @@
 This website was developed using the html, css, javaScript, jQuery, axios, bootstrap4, fontawesome and json:server.
 It is an improved version of my earleir work 'Osmo-6'
 
-#FEATURES
+# FEATURES
+
 This website now have the following functionalities:
 . register
 . sign-in and sign-out
